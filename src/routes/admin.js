@@ -5,15 +5,13 @@ const express = require('express');
 
 const router = express.Router();
 
-const checkBdd = '../middleware/check-db';
-
 const db = require('../../library/postgresql-query');
 
 db.config({
-  username: 'ytqhproxiwopyo',
-  password: '4b421fdd8f641d916b0784c645edf0a3c4d7c9bc3ef2d551f5893b019ba4e1e5',
-  host: 'ec2-23-23-130-158.compute-1.amazonaws.com',
-  database: 'd550g8hj5ppqm1'
+  username: 'oafykctgcovioc',
+  password: '49548284326668a5efa7978b981a912e10b28f500cdb7e8cf40b9179e4e97d58',
+  host: 'ec2-54-243-235-153.compute-1.amazonaws.com',
+  database: 'd7ireino6c2qug'
 });
 
 function message(status, response, message) {
