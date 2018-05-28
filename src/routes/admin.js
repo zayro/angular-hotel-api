@@ -14,6 +14,8 @@ db.config({
   database: 'd7ireino6c2qug'
 });
 
+
+
 function message(status, response, message) {
   const data = {};
   data.status = status;
@@ -37,6 +39,19 @@ router.get('/getAll/:table/', (req, res) => {
 
 });
 
+router.get('/query/:table/', (req, res) => {
+  
+  db.query(`SELECT * FROM ${req.params.table} WHERE ${Object.keys(req.query)} LIKE '%${Object.values(req.query)}%'  `, (err, response) => {
+
+    if (!err) {
+      return res.status(200).json(message(true, response, "Se consulto exitosamente"));
+    } else {
+      return res.status(500).json(message(false, err, "Ocurrio un problema al consultar"));
+    }
+
+  });
+
+});
 
 router.post('/inserts/', (req, res) => {
 
@@ -54,7 +69,6 @@ router.post('/inserts/', (req, res) => {
 
 
 });
-
 
 router.post('/insert/:table/:field', (req, res) => {
 
