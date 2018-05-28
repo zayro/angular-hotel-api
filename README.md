@@ -21,7 +21,7 @@ GET https://angular-hotel-api.herokuapp.com/admin/getAll/hoteles
 #### GET MUESTRA CONSULTA
 
 ```http
-GET https://angular-hotel-api.herokuapp.com/query/hoteles?name=Ho
+GET https://angular-hotel-api.herokuapp.com/admin/query/hoteles?name=Ho
 ```
 
 #### cuerpo del body peticion POST
@@ -98,11 +98,24 @@ devuelve los siguientes códigos de estado en su API:
 | 404 | `NOT FOUND` |
 | 500 | `INTERNAL SERVER ERROR`|
 
+### ARCHIVO BASE DE DATOS
+
+```
+FOLDER: public.sql
+```
+
+es el backup generado por postgresql.
+
+
 ## Despliegue entorno production heroku
 
 el aplicativo se testeo con heroku subiendo el proyecto con un deploy en heroku manejando estandares de calidad en el desarrollo.
 
 URL FRONTEND
+<br>
 [https://angular-hotel.herokuapp.com/](https://angular-hotel.herokuapp.com/)
+<br>
+
 URL BACKEND
+<br>
 [https://angular-hotel-api.herokuapp.com/admin/getAll/hoteles](https://angular-hotel-api.herokuapp.com/admin/getAll/hoteles)
