@@ -12,7 +12,7 @@ if(process.env.NODE_ENV !== 'PRODUCTION'){
 
 }
 
-const port =  process.env.PORTDATA || process.env.PORTDATA || 3000;
+const port =  process.env.PORT || process.env.PORT || 3000;
 
 server.use(middlewares);
 server.use(router);
