@@ -6,13 +6,19 @@ const router = jsonServer.router(path.join(__dirname, 'data/data.json'));
 const middlewares = jsonServer.defaults();
 
 
+/*
+console.log('Variables Entorno', environment);
+
+console.log('Variables Entorno process', process.env);
+*/
+
 if(process.env.NODE_ENV !== 'PRODUCTION'){
 
   dotenv.load();
 
 }
 
-const port =  process.env.PORT || process.env.PORT || 3000;
+const port =  process.env.PORT || environment.PORT || 3000;
 
 server.use(middlewares);
 server.use(router);
